@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '\\views\\partials');
@@ -57,6 +59,6 @@ app.get('/bad', (req, res) => {
 
 // route for /bad. simulate a failed request. response.send. JSON data with error property.
 
-app.listen(3000, () => {
-  console.log('server up on 3000');
+app.listen(port, () => {
+  console.log(`server up on ${port}`);
 });
